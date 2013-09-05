@@ -49,12 +49,16 @@ class CSA(object):
     >>> xin = np.random.randn(10000)
     >>> yin = np.random.randn(10000)
     >>> zin = np.sin( xin**2 + yin**2 ) / (xin**2 + yin**2 )
-    >>> xout, yout = np.mgrid[-3:3:10j, -3:3:10j]
+    >>> xout, yout = np.mgrid[-3:3:100j, -3:3:100j]
     >>> csa_interp = csa.CSA(xin, yin, zin)
     >>> zout = csa_interp(xout, yout)
     >>> csa_interp.zin =  np.cos( xin + yin**2 )
-    >>> zout = csa_interp
-    >>> print zout
+    >>> zout = csa_interp(xout, yout)
+    >>> import matplotlib.pyplot as plt
+    >>> plt.pcolormesh(xout, yout, zout, vmin=-1, vmax=1)
+    >>> plt.scatter(csa_interp.xin, csa_interp.yin, 30, csa_interp.zin, 
+                edgecolors='k', vmin=-1, vmax=1)
+    >>> plt.colorbar()
     
     '''
     

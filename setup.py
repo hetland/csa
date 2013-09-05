@@ -8,8 +8,8 @@ Based on an algorithm by:
 
     Haber, J., Zeilfelder, F., Davydov, O., and Seidel, H. P. (2001). 
     Smooth approximation and rendering of large scattered data sets. 
-    In Proceedings of the conference on Visualization ’01, 
-    pages 341–348. IEEE Computer Society.
+    In Proceedings of the conference on Visualization '01, 
+    pages 341-348. IEEE Computer Society.
 
 Python wrapper by Robert Hetland (hetland@tamu.edu)
 
@@ -51,8 +51,8 @@ Topic :: Software Development :: Libraries :: Python Modules
 from numpy.distutils.core import Extension
 
 csa = Extension(name = '_csa',
-                sources=["src/csa/csa.c",
-                         "src/csa/svd.c"])
+                sources=["src/csa.c",
+                         "src/svd.c"])
 
 doclines = __doc__.split("\n")
 
